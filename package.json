@@ -1,6 +1,6 @@
 {
   "name": "solidity-comments",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "github:frangio/solidity-comments",
   "main": "index.js",
   "types": "index.d.ts",
