@@ -2,74 +2,44 @@ import test from "ava";
 
 import { analyze } from "../index.js";
 
-test("returns well-formed version pragmas", (t) => {
+test("returns no comments", (t) => {
   t.deepEqual(
-    analyze(`pragma solidity 1.2.3;
-
-pragma solidity ^4.5.6 >1;
-`),
+    analyze(`pragma solidity 1.2.3;`),
     {
-      versionPragmas: ["1.2.3", "^4.5.6 >1"],
-      imports: [],
+      comments: [],
     }
   );
 });
 
-test("returns well-formed imports", (t) => {
+test("returns one comment", (t) => {
   t.deepEqual(
-    analyze(`import "bare.sol";
-
-import * as withStar from "star.sol";
-
-import "as.sol" as something;
-
-import {} from "empty-braces.sol";
-
-import {,,} from "empty-braces2.sol";
-
-import {something} from "symbol.sol";
-
-import {something as somethingElse} from "aliased.sol";
-
-import {something as somethingElse, other,,other2} from "multiple.sol";
-`),
+    analyze(`// abc`),
     {
-      versionPragmas: [],
-      imports: [
-        "bare.sol",
-        "star.sol",
-        "as.sol",
-        "empty-braces.sol",
-        "empty-braces2.sol",
-        "symbol.sol",
-        "aliased.sol",
-        "multiple.sol",
+      comments: [
+        {
+          start: 0,
+          end: 6,
+          text: '// abc',
+        },
       ],
     }
   );
 });
 
-test("ignores other statements and comments", (t) => {
+test("returns one comment until newline", (t) => {
   t.deepEqual(
-    analyze(`//comment
-    pragma solidity 1.2.3;
-library Asd {}
-
-import "asd.sol";
-
-contract C{
-  function f() {}
-}
-
-pragma solidity ^4.5.6 >1;
-`),
+    analyze(`
+      // abc
+      import "ok.sol";
+      `),
     {
-      versionPragmas: ["1.2.3", "^4.5.6 >1"],
-      imports: ["asd.sol"],
+      comments: [
+        {
+          start: 7,
+          end: 13,
+          text: '// abc',
+        },
+      ],
     }
   );
 });
-
-test.todo("recovers from malformed pragma statements");
-
-test.todo("recovers from malformed import statements");
