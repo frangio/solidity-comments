@@ -1,5 +1,5 @@
 {
-  "name": "@nomicfoundation/solidity-analyzer-linux-x64-musl",
+  "name": "solidity-comments-linux-x64-musl",
   "version": "0.0.0",
   "os": [
     "linux"
@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "solidity-analyzer.linux-x64-musl.node",
+  "main": "solidity-comments.linux-x64-musl.node",
   "files": [
-    "solidity-analyzer.linux-x64-musl.node"
+    "solidity-comments.linux-x64-musl.node"
   ],
   "license": "MIT",
   "engines": {

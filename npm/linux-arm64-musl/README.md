@@ -1,3 +1,3 @@
-# `@nomicfoundation/solidity-analyzer-linux-arm64-musl`
+# `solidity-comments-linux-arm64-musl`
 
-This is the **aarch64-unknown-linux-musl** binary for `@nomicfoundation/solidity-analyzer`
+This is the **aarch64-unknown-linux-musl** binary for `solidity-comments`

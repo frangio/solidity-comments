@@ -1,5 +1,5 @@
 {
-  "name": "@nomicfoundation/solidity-analyzer-freebsd-x64",
+  "name": "solidity-comments-freebsd-x64",
   "version": "0.0.0",
   "os": [
     "freebsd"
@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "solidity-analyzer.freebsd-x64.node",
+  "main": "solidity-comments.freebsd-x64.node",
   "files": [
-    "solidity-analyzer.freebsd-x64.node"
+    "solidity-comments.freebsd-x64.node"
   ],
   "license": "MIT",
   "engines": {

@@ -1,11 +1,11 @@
-# `@nomicfoundation/solidity-analyzer`
+# `solidity-comments`
 
-`@nomicfoundation/solidity-analyzer` is an N-API library built in Rust, which exposes a single function, which takes the contents of a Solidity source file and returns its imports and version pragmas.
+`solidity-comments` is an N-API library built in Rust, which exposes a single function, which takes the contents of a Solidity source file and returns its imports and version pragmas.
 
 ## Installation
 
 ```bash
-npm install @nomicfoundation/solidity-analyzer
+npm install solidity-comments
 ```
 
 ## API

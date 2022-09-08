@@ -1,8 +1,8 @@
 # Test project
 
-This is a project to test the `solidity-analyzer` using every file of the [`smart-contract-sanctuary`](https://github.com/tintinweb/smart-contract-sanctuary).
+This is a project to test the `solidity-comments` using every file of the [`smart-contract-sanctuary`](https://github.com/tintinweb/smart-contract-sanctuary).
 
-It extracts the imports and version pragmas using both `@nomicfoundation/solidity-analyzer` and `@solidity-parser/parser`, and compares the results.
+It extracts the imports and version pragmas using both `solidity-comments` and `@solidity-parser/parser`, and compares the results.
 
 ## Installation
 
@@ -12,7 +12,7 @@ First, install this npm module:
 yarn install
 ```
 
-Then, build `@nomicfoundation/solidity-analyzer` running this at the root of the repository:
+Then, build `solidity-comments` running this at the root of the repository:
 
 ```bash
 yarn build
