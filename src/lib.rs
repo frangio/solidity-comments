@@ -23,7 +23,8 @@ pub struct AnalysisResult {
 #[napi]
 pub fn analyze(input: String) -> Result<AnalysisResult, Error> {
   let mut comments = Vec::new();
-  let lexer = Lexer::new(&input, 0, &mut comments);
+  let mut errors = Vec::new();
+  let lexer = Lexer::new(&input, 0, &mut comments, &mut errors);
   lexer.for_each(drop);
 
   let comments: Vec<_> = comments
